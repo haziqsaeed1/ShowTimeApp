@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="ShowTimeApp.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShowTimeApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel Grid.Column="0" Background="#FFF80159">
+            <Image Source="Assets/Images/login.jpg"
+                   MaxHeight="200"
+                   Margin="50"
+                   RelativePanel.AlignHorizontalCenterWithPanel="True"
+                   RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+
+        <ScrollViewer Grid.Column="1" 
+                            FontFamily="Century Gothic"
+                            Foreground="#FF3D195B">
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                               x:Name="outputbox"
+                               Grid.Row ="5"
+                               FontSize="25"
+                               Margin="50,0,50,20"/>
+
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

@@ -25,12 +25,12 @@ namespace ShowTimeApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
-            
-
         }
+        
         public ObservableCollection<login> GetLogins(string connectionString)
         {
             const string GetloginsQuery = "select email, password from login";
@@ -40,18 +40,25 @@ namespace ShowTimeApp
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    if(conn.State == System.Data.ConnectionState.Open)
+                    if (conn.State == System.Data.ConnectionState.Open)
                     {
+
                         using (SqlCommand cmd = conn.CreateCommand())
                         {
                             cmd.CommandText = GetloginsQuery;
-                                using (SqlDataReader reader = cmd.ExecuteReader())
+                            using (SqlDataReader reader = cmd.ExecuteReader())
                             {
-                                while(reader.Read())
+                                while (reader.Read())
                                 {
+                                    string em = "haziqsaeed1@gmail.com";
+                                    string pass = "password";
                                     var login = new login();
                                     login.email = reader.GetString(1);
-                                    login.password = reader.GetString(2);
+                                    if (em == emailinput.Text)
+                                    if (pass == passwordbox.ToString());
+                                    {
+                                        Console.WriteLine("Login SuccessFul!");
+                                    }
                                 }
                             }
                         }
@@ -60,16 +67,17 @@ namespace ShowTimeApp
                 return logins;
 
             }
-            catch(Exception eSql)
+            catch (Exception eSql)
             {
                 Debug.WriteLine("Exception: " + eSql.Message);
             }
             return null;
         }
-
-        private void loginbutton_Click(object sender, RoutedEventArgs e)
+        private void loginbtn_Click(object sender, RoutedEventArgs e)
         {
-            Button loginbtn = (Button)sender;
+            this.Frame.Navigate(typeof(BlankPage1));
         }
+
+
     }
 }

@@ -43,7 +43,8 @@
                            Text="Email"
                            FontSize="25"
                            Margin ="50,0,0,0"/>
-                <TextBox Grid.Row ="2"
+                <TextBox x:Name="emailinput"
+                         Grid.Row ="2"
                          FontSize="25"
                          Margin="50,0,50,20"
                          BorderThickness="0,0,0,3"
@@ -52,7 +53,8 @@
                            Text="Password"
                            FontSize="25"
                            Margin="50,0,0,0"/>
-                <PasswordBox Grid.Row="4"
+                <PasswordBox x:Name="passwordbox"
+                             Grid.Row="4"
                              FontSize="25"
                              Margin="50,0,50,20"
                              BorderThickness="0,0,0,4"
@@ -68,7 +70,8 @@
                         Click="loginbutton_Click"
                         Padding="15,5,15,5"
                     />
-            </Grid>
+                    
+                </Grid>
             </StackPanel>
         </ScrollViewer>
            </Grid>

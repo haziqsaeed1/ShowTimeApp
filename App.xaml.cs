@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -100,5 +101,6 @@ namespace ShowTimeApp
         private string connectionString = @"Data Source=DESKTOP-8CHBRDQ\SQLEXPRESS;Initial Catalog=showtime;Integrated Security=SSPI";
 
         public string ConnectionString { get => connectionString; set => connectionString = value; }
+
     }
 }
